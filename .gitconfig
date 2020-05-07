@@ -1,0 +1,12 @@
+[user]
+	name = BinotaLIU
+	email = me@binota.org
+	signingKey = 636176F2829FE9AD8C53DEA887C590ECC1F5314E
+[commit]
+	gpgSign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
