@@ -14,3 +14,6 @@ install vundle
     mkdir -p ~/.vim/bundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+install git-lfs
+install legit https://github.com/frostming/legit
+
