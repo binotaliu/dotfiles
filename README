@@ -9,3 +9,8 @@ rename antigen to `.antigen.zsh`
 
     sed -i 's/antigen\.zsh/.antigen.zsh/g' ~/.antigen.zsh
 
+install vundle
+
+    mkdir -p ~/.vim/bundle
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
