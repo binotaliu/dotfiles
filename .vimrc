@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 
 set nu
+set noswapfile
 
 " display invisible characters
 set list
@@ -19,6 +20,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
