@@ -20,7 +20,13 @@ alias code="code-insiders"
 export DENO_INSTALL="$HOME/.deno"
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="$PATH:$HOME/.npm/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/.config/npm/bin"
 export PATH="$PATH:$HOME/ThirdPartyRepos/flutter/bin"
 export PATH="$PATH:$DENO_INSTALL/bin"
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.symfony/bin"
+
+[[ -s "/home/binota/.gvm/scripts/gvm" ]] && source "/home/binota/.gvm/scripts/gvm"
 
