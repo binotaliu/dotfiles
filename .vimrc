@@ -22,6 +22,8 @@ Plugin 'endel/vim-github-colorscheme'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
 
+Plugin 'pangloss/vim-javascript'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -30,4 +32,6 @@ filetype plugin indent on
 let g:airline_powerline_fonts = 1
 let g:airline_theme='github'
 colorscheme github
+
+syntax on
 
