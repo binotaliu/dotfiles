@@ -20,7 +20,7 @@ alias git="hub"
 alias code="code-insiders"
 
 if [[ `uname -s` -e "Darwin" ]]; then
-  alias uuu="brew update && brew upgrade"
+  alias uuu="brew update && brew upgrade && mas upgrade"
 else
   alias uuu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
 fi
