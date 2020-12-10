@@ -19,7 +19,7 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;4
 alias git="hub"
 alias code="code-insiders"
 
-if [[ `uname -s` -e "Darwin" ]]; then
+if [[ `uname -s` == "Darwin" ]]; then
   alias uuu="brew update && brew upgrade && mas upgrade"
 else
   alias uuu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
