@@ -1,0 +1,24 @@
+add tap for age:
+
+    brew tap filippo.io/age https://filippo.io/age
+
+
+install for homebrew:
+
+    cat Homebrew | xargs brew install
+    cat HomebrewCasks | xargs brew install --cask
+
+install for Mas (Mac App Store):
+
+    cut -d ' ' -f1 Mas | xargs mas install
+
+----
+
+CGR:
+
+    composer global require consolidation/cgr --ignore-platform-reqs
+    cat Composer | xargs cgr --ignore-platform-reqs
+
+Npm:
+    cat Npm | xargs npm install --global
+
