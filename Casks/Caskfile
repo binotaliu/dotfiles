@@ -1,0 +1,4 @@
+cask_args appdir: "/Applications"
+
+cask "~/.dotfiles/Casks/affinity-designer.rb"
+
