@@ -7,6 +7,8 @@ defaults write -g AppleFirstWeekday -dict gregorian -int 2
 defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool true
 defaults write -g com.apple.mouse.scaling -string "2.5"
 
+defaults write -g ApplePressAndHoldEnabled -bool true
+
 # - MARK: Menu
 defaults write com.apple.menuextra.clock "DateFormat" -string "h:mm"
 defaults write com.apple.menuextra.clock "ShowAMPM" -bool false
