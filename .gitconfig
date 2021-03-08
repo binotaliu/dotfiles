@@ -11,5 +11,6 @@
 [core]
 	autocrlf = input
 	fileMode = false
+	editor = vim
 [init]
 	defaultBranch = main
