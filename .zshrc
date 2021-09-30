@@ -12,8 +12,6 @@ else
   alias uuu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
 fi
 
-export EDITOR=vim
-
 export DENO_INSTALL="$HOME/.deno"
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
