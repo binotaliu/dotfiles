@@ -4,7 +4,7 @@ fi
 
 command -v thefuck && eval $(thefuck --alias)
 
-alias git="hub"
+command -v hub && alias git="hub"
 
 if [[ `uname -s` == "Darwin" ]]; then
   alias uuu="mas upgrade && brew update && brew upgrade && softwareupdate -ia"
