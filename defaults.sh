@@ -34,3 +34,8 @@ defaults write com.apple.Music crossfadeEnabled -bool true
 defaults write com.apple.Music crossfadeSeconds -int 5 
 defaults write com.apple.Music showStoreInSidebar -int 2
 
+# - MARK: Safari
+defaults write com.apple.Safari IncludeDevelopMenu -int 1 
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1 
+defaults write com.apple.Safari "WebKitPreferences.developerExtrasEnabled" -int 1 
+
