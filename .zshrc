@@ -2,9 +2,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-command -v thefuck && eval $(thefuck --alias)
-
-command -v hub && alias git="hub"
+if [[ -z `command -v thefuck` ]]; then eval $(thefuck --alias); fi
+if [[ -z `command -v hub` ]]; then alias git="hub"; fi
 
 if [[ `uname -s` == "Darwin" ]]; then
   alias uuu="mas upgrade && brew update && brew upgrade && softwareupdate -ia"
@@ -37,3 +36,4 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1
 
 alias a="php artisan"
 alias c="composer"
+
