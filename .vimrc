@@ -36,7 +36,7 @@ else
 endif
 
 " true colour
-set termguicolors
+" set termguicolors
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'one'
 colorscheme one
