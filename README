@@ -17,3 +17,7 @@ install vundle
 install git-lfs
 install legit https://github.com/frostming/legit
 
+copy xcode theme files
+
+    cp ~/.dotfiles/FontAndColorThemes/* ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+
