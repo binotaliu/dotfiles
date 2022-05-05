@@ -6,6 +6,7 @@ defaults write -g NSPreferredWebServices '{ NSWebServicesProviderWebSearch = { N
 defaults write -g AppleFirstWeekday -dict gregorian -int 2
 defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool true
 defaults write -g com.apple.mouse.scaling -string "2.5"
+defaults write -g com.apple.sound.beep.volume -string "0.38"
 
 defaults write -g ApplePressAndHoldEnabled -bool true
 
