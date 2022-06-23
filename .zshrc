@@ -34,6 +34,8 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 # export HOMEBREW_CASK_OPTS=--require-sha
 
+DUSK_CHROME_BINARY=/Applications/Chromium.app/Contents/MacOS/Chromium 
+
 alias a="php artisan"
 alias afs="a migrate:fresh && a db:seed"
 
@@ -41,4 +43,5 @@ alias c="composer"
 
 alias g="git"
 alias gsm="git switch main"
+alias gs="git switch -c"
 
