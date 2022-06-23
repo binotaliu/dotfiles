@@ -1,0 +1,9 @@
+._*
+.DS_Store
+.Trashes
+
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+
+*~
+
