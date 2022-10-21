@@ -7,6 +7,7 @@ if [[ -z `command -v hub` ]]; then alias git="hub"; fi
 
 if [[ `uname -s` == "Darwin" ]]; then
   alias uuu="mas upgrade && brew update && brew upgrade && softwareupdate -ia"
+  export OPEN_ON_MAKE_EDITOR="open -a \"PhpStorm\""
 else
   alias uuu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
 fi
