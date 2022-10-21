@@ -36,6 +36,21 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1
 
 DUSK_CHROME_BINARY=/Applications/Chromium.app/Contents/MacOS/Chromium 
 
+function set-git-gh-remote() {
+  if [[ $# -eq 1 ]]; then
+    gitRemote="origin"
+    ghRepo="$1"
+  elif [[ $# -eq 2 ]]; then
+    gitRemote="$1"
+    ghRepo="$2"
+  else
+    echo "Usage: $0 {GitRemoteName} <GitHubRepoName>"
+    return -1
+  fi
+
+  git remote add $gitRemote `gh repo view $ghRepo --json sshUrl --jq ".sshUrl"`
+}
+
 alias a="php artisan"
 alias afs="a migrate:fresh && a db:seed"
 
