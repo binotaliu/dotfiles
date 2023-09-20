@@ -52,8 +52,30 @@ function set-git-gh-remote() {
   git remote add $gitRemote `gh repo view $ghRepo --json sshUrl --jq ".sshUrl"`
 }
 
+# PHP Versions
+
+alias p72="`brew --prefix php@7.2`/bin/php"
+alias p74="`brew --prefix php@7.4`/bin/php"
+alias p81="`brew --prefix php@8.1`/bin/php"
+
+alias c72="`brew --prefix php@7.2`/bin/php `which composer`"
+alias c74="`brew --prefix php@7.4`/bin/php `which composer`"
+alias c81="`brew --prefix php@8.1`/bin/php `which composer`"
+
+alias a72="`brew --prefix php@7.2`/bin/php artisan"
+alias a74="`brew --prefix php@7.4`/bin/php artisan"
+alias a81="`brew --prefix php@8.1`/bin/php artisan"
+
+# Aliases
 alias a="php artisan"
 alias afs="a migrate:fresh && a db:seed"
+
+alias sail="./vendor/bin/sail"
+alias s="./vendor/bin/sail"
+alias sa="./vendor/bin/sail artisan"
+alias sat="./vendor/bin/sail artisan tinker"
+alias safs="sa migrate:fresh && sa db:seed"
+alias sc="./vendor/bin/sail composer"
 
 alias c="composer"
 
