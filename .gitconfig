@@ -12,14 +12,24 @@
 	autocrlf = input
 	fileMode = false
 	editor = vim
-	excludesFile = ~/.dotfiles/.gitglobalignore
+	excludesfile = /Users/binota/.dotfiles/.gitglobalignore
 [init]
 	defaultBranch = main
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+	program = /usr/local/bin/gpg
 [alias]
+  swi = switch
+  swc = switch -c
+  mer = merge --no-ff
+  pus = push
+  pul = pull
+  fet = fetch
 	sync = !/usr/local/bin/legit sync
 	publish = !/usr/local/bin/legit publish
 	unpublish = !/usr/local/bin/legit unpublish
 	undo = !/usr/local/bin/legit undo
 	branches = !/usr/local/bin/legit branches
+
+[includeIf "gitdir:~/Developer/TheTwins/"]
+  path = ~/Developer/TheTwins/.gitconfig
+
