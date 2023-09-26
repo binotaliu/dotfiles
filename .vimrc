@@ -5,8 +5,8 @@ set nu
 set noswapfile
 
 " display invisible characters
-set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+" set list
+" set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " tab configurations
 set expandtab
