@@ -81,5 +81,7 @@ alias c="composer"
 
 alias g="git"
 alias gsm="git switch main"
-alias gs="git switch -c"
+alias gsd="git switch dev"
+
+alias dcu="docker compose up -d"
 
