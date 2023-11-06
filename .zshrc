@@ -84,4 +84,5 @@ alias gsm="git switch main"
 alias gsd="git switch dev"
 
 alias dcu="docker compose up -d"
+alias dcr="docker compose run --rm"
 
