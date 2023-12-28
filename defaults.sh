@@ -30,7 +30,7 @@ defaults write com.apple.dock tilesize -int 48
 defaults write com.apple.dock persistent-apps '{}'
 
 # - MARK: Music
-defaults write com.apple.Music userWantsPlaybackNotifications -bool false
+defaults write com.apple.Music userWantsPlaybackNotifications -bool true
 defaults write com.apple.Music crossfadeEnabled -bool true
 defaults write com.apple.Music crossfadeSeconds -int 5 
 defaults write com.apple.Music showStoreInSidebar -int 2
