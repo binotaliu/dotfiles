@@ -24,9 +24,9 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Item-3" -bool false
 defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool false
 
 # - MARK: Dock
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock largesize -int 62
-defaults write com.apple.dock tilesize -int 48
+defaults write com.apple.dock autohide -bool false
+defaults write com.apple.dock largesize -int 67
+defaults write com.apple.dock tilesize -int 49
 defaults write com.apple.dock persistent-apps '{}'
 
 # - MARK: Music
