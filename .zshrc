@@ -86,3 +86,6 @@ alias gsd="git switch dev"
 alias dcu="docker compose up -d"
 alias dcr="docker compose run --rm"
 
+alias "??"="gh copilot suggest"
+alias "?"="gh copilot explain"
+
