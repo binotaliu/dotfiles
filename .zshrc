@@ -54,17 +54,17 @@ function set-git-gh-remote() {
 
 # PHP Versions
 
-alias p72="`brew --prefix php@7.2`/bin/php"
-alias p74="`brew --prefix php@7.4`/bin/php"
-alias p81="`brew --prefix php@8.1`/bin/php"
+alias p72="/Users/binota/Library/Application\\ Support/Herd/bin/php72"
+alias p74="/Users/binota/Library/Application\\ Support/Herd/bin/php74"
+alias p81="/Users/binota/Library/Application\\ Support/Herd/bin/php81"
 
-alias c72="`brew --prefix php@7.2`/bin/php `which composer`"
-alias c74="`brew --prefix php@7.4`/bin/php `which composer`"
-alias c81="`brew --prefix php@8.1`/bin/php `which composer`"
+alias c72="/Users/binota/Library/Application\\ Support/Herd/bin/php72 `which composer`"
+alias c74="/Users/binota/Library/Application\\ Support/Herd/bin/php74 `which composer`"
+alias c81="/Users/binota/Library/Application\\ Support/Herd/bin/php81 `which composer`"
 
-alias a72="`brew --prefix php@7.2`/bin/php artisan"
-alias a74="`brew --prefix php@7.4`/bin/php artisan"
-alias a81="`brew --prefix php@8.1`/bin/php artisan"
+alias a72="/Users/binota/Library/Application\\ Support/Herd/bin/php72 artisan"
+alias a74="/Users/binota/Library/Application\\ Support/Herd/bin/php74 artisan"
+alias a81="/Users/binota/Library/Application\\ Support/Herd/bin/php81 artisan"
 
 # Aliases
 alias a="php artisan"
@@ -83,9 +83,54 @@ alias g="git"
 alias gsm="git switch main"
 alias gsd="git switch dev"
 
-alias dcu="docker compose up -d"
-alias dcr="docker compose run --rm"
+function _autodetect_dockercompose_file_flag {
+  compose_file=""
+
+  if [[ -f "docker-compose.yml" ]]; then
+    compose_file="docker-compose.yml"
+  elif [[ -f "docker-compose.yaml" ]]; then
+    compose_file="docker-compose.yaml"
+  elif [[ -f "docker/docker-compose.yml" ]]; then
+    compose_file="docker/docker-compose.yml"
+  elif [[ -f "docker/docker-compose.yaml" ]]; then
+    compose_file="docker/docker-compose.yaml"
+  fi
+
+  if [[ -n $compose_file ]]; then
+    echo "-f ${compose_file}"
+  fi
+}
+
+function _autodetect_dockercompose {
+  docker compose $(_autodetect_dockercompose_file_flag) $@
+}
+
+alias dcu="_autodetect_dockercompose up -d"
+alias dcd="_autodetect_dockercompose down"
+alias dcr="_autodetect_dockercompose run --rm"
+alias com="_autodetect_dockercompose"
 
 alias "??"="gh copilot suggest"
 alias "?"="gh copilot explain"
 
+
+# Herd injected PHP binary.
+export PATH="/Users/binota/Library/Application Support/Herd/bin/":$PATH
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="/Users/binota/Library/Application Support/Herd/config/php/81/"
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/binota/Library/Application Support/Herd/config/php/82/"
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/binota/Library/Application Support/Herd/config/php/83/"
+
+
+
+# Herd injected PHP 7.4 configuration.
+export HERD_PHP_74_INI_SCAN_DIR="/Users/binota/Library/Application Support/Herd/config/php/74/"
+
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/binota/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
