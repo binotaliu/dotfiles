@@ -18,12 +18,14 @@
 [gpg]
 	program = /usr/local/bin/gpg
 [alias]
+  com = commit
   swi = switch
   swc = switch -c
   mer = merge --no-ff
   pus = push
   pul = pull
   fet = fetch
+  emptycom = commit --allow-empty
 	sync = !/usr/local/bin/legit sync
 	publish = !/usr/local/bin/legit publish
 	unpublish = !/usr/local/bin/legit unpublish
