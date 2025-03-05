@@ -41,5 +41,5 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1
 defaults write com.apple.Safari "WebKitPreferences.developerExtrasEnabled" -int 1 
 
 # - MARK: Xcode
-default write com.apple.dt.Xcode KeyBindingsMode Vi
+defaults write com.apple.dt.Xcode KeyBindingsMode Vi
 

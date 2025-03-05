@@ -32,6 +32,18 @@
 	undo = !/usr/local/bin/legit undo
 	branches = !/usr/local/bin/legit branches
 
-[includeIf "gitdir:~/Developer/TheTwins/"]
-  path = ~/Developer/TheTwins/.gitconfig
+[includeIf "gitdir:~/Developer/ttwns/"]
+  path = ~/Developer/ttwns/.gitconfig
+[includeIf "gitdir:~/Developer/rooster/"]
+  path = ~/Developer/rooster/.gitconfig
 
+[http]
+	postBuffer = 1048576000
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[safe]
+	bareRepository = explicit

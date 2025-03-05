@@ -18,11 +18,13 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:$HOME/.config/npm/bin"
 export PATH="$PATH:$HOME/ThirdPartyRepos/flutter/bin"
+export PATH="$PATH:/Applications/PhpStorm.app/Contents/MacOS"
 
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.symfony/bin"
 
+export PATH="/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH"
 
 [[ -d "$DENO_INSTALL" ]] && export PATH="$PATH:$DENO_INSTALL/bin"
 
@@ -68,13 +70,13 @@ alias a81="/Users/binota/Library/Application\\ Support/Herd/bin/php81 artisan"
 
 # Aliases
 alias a="php artisan"
-alias afs="a migrate:fresh && a db:seed"
+alias afs="a migrate:fresh --seed"
 
 alias sail="./vendor/bin/sail"
 alias s="./vendor/bin/sail"
 alias sa="./vendor/bin/sail artisan"
 alias sat="./vendor/bin/sail artisan tinker"
-alias safs="sa migrate:fresh && sa db:seed"
+alias safs="sa migrate:fresh --seed"
 alias sc="./vendor/bin/sail composer"
 
 alias c="composer"
@@ -82,6 +84,22 @@ alias c="composer"
 alias g="git"
 alias gsm="git switch main"
 alias gsd="git switch dev"
+
+alias sd="npx shadcn-vue@latest"
+
+function _check_multiple_docker_compose {
+  running_compose_count=$(docker compose ls --format json | jq '[.[] | select(.Status | test("running"))] | length')
+
+  if [[ $running_compose_count -gt 0 ]]; then
+    echo "There are one or more Docker Compose service(s) currently running. Are you sure you want to start another? (Currently $running_compose_count running)"
+    printf "Continue (y/N)? "
+    read choice
+    case "$choice" in
+      y|Y ) echo "Proceeding...";;
+      * ) echo "Operation cancelled."; exit 1;;
+    esac
+  fi
+}
 
 function _autodetect_dockercompose_file_flag {
   compose_file=""
@@ -102,10 +120,10 @@ function _autodetect_dockercompose_file_flag {
 }
 
 function _autodetect_dockercompose {
-  docker compose $(_autodetect_dockercompose_file_flag) $@
+  docker compose $(_autodetect_dockercompose_file_flag) "$@"
 }
 
-alias dcu="_autodetect_dockercompose up -d"
+alias dcu="_check_multiple_docker_compose && _autodetect_dockercompose up -d"
 alias dcd="_autodetect_dockercompose down"
 alias dcr="_autodetect_dockercompose run --rm"
 alias com="_autodetect_dockercompose"
@@ -134,3 +152,10 @@ export NVM_DIR="/Users/binota/Library/Application Support/Herd/config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/binota/Library/Application Support/Herd/config/php/84/"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/binota/.lmstudio/bin"
