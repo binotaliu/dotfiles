@@ -2,9 +2,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-if [[ -z `command -v thefuck` ]]; then eval $(thefuck --alias); fi
-if [[ -z `command -v hub` ]]; then alias git="hub"; fi
-
 if [[ `uname -s` == "Darwin" ]]; then
   alias uuu="mas upgrade && brew update && brew upgrade && softwareupdate -ia"
   export OPEN_ON_MAKE_EDITOR="open -a \"PhpStorm\""
@@ -159,3 +156,8 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/binota/Library/Application Support/Herd/
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/binota/.lmstudio/bin"
+
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+export PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/bin:$PATH"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
