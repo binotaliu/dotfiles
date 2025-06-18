@@ -9,4 +9,5 @@ cp "${DOTFILES_DIR}/.zpreztorc" ~/.zpreztorc
 cp "${DOTFILES_DIR}/.gitconfig" ~/.gitconfig
 
 git config --global --unset gpg.program
+git config --global core.editor "code --wait"
 
