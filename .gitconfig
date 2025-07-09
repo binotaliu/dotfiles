@@ -25,12 +25,13 @@
   pus = push
   pul = pull
   fet = fetch
+  fix = commit --fixup
   emptycom = commit --allow-empty
-	sync = !/usr/local/bin/legit sync
-	publish = !/usr/local/bin/legit publish
-	unpublish = !/usr/local/bin/legit unpublish
-	undo = !/usr/local/bin/legit undo
-	branches = !/usr/local/bin/legit branches
+  ; sync = !/usr/local/bin/legit sync
+  ; publish = !/usr/local/bin/legit publish
+  ; unpublish = !/usr/local/bin/legit unpublish
+  ; undo = !/usr/local/bin/legit undo
+  ; branches = !/usr/local/bin/legit branches
 
 [includeIf "gitdir:~/Developer/ttwns/"]
   path = ~/Developer/ttwns/.gitconfig
@@ -47,3 +48,4 @@
 	trustExitCode = true
 [safe]
 	bareRepository = explicit
+
